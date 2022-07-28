@@ -1,5 +1,5 @@
 {
-  "name": "OddMusic",
+  "name": "oddmusic",
   "version": "1.0.0",
   "description": "OddMusic is an simple but fastest discord music bot.",
   "main": "index.js",
@@ -23,5 +23,12 @@
   },
   "devDependencies": {
     "node": "^16.15.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deriklim8/Yi-Tiao-Qing-Yan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deriklim8/Yi-Tiao-Qing-Yan/issues"
   }
 }
