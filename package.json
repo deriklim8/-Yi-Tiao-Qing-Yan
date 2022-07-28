@@ -6,16 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/odd-coder/OddMusic.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/odd-coder/OddMusic/issues"
-  },
   "homepage": "https://github.com/odd-coder/OddMusic#readme",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",

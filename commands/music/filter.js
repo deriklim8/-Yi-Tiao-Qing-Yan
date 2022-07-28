@@ -2,21 +2,21 @@ const { getVoiceConnection } = require("@discordjs/voice");
 const { MessageActionRow, MessageSelectMenu, MessageEmbed } = require("discord.js");
 module.exports = {
     name: "filter",
-    description: "Applys/Removes Filters of the Queue",
+    description: "添加/移除特效",
     run: async (client, message, args, prefix) => {
         try {
-            if(!message.member.voice.channelId) return message.reply({content: "<:oddno:968555009908293652> **Please join a Voice-Channel first!**"}).catch(() => null);
+            if(!message.member.voice.channelId) return message.reply({content: "<a:BobeeNo:1002230087762063410>｜**你必须先加入一个语音频道！**"}).catch(() => null);
             const oldConnection = getVoiceConnection(message.guild.id);
-            if(!oldConnection) return message.reply({ content: `<:oddno:968555009908293652> **I'm not connected somewhere**!`}).catch(() => null);
+            if(!oldConnection) return message.reply({ content: `<a:BobeeNo:1002230087762063410> ｜**我必须先加入一个语音频道**!`}).catch(() => null);
             
             const queue = client.queues.get(message.guild.id);
-            if(!queue) return message.reply({ content: `<:oddno:968555009908293652> **I'm nothing playing right now.**`}).catch(() => null);
+            if(!queue) return message.reply({ content: `<a:BobeeNo:1002230087762063410>｜**你必须先播放音乐**`}).catch(() => null);
             
             const options = Object.keys(queue.effects)
             
             const Menu = new MessageSelectMenu()
                 .setCustomId("filter_changing")
-                .setPlaceholder("Pic Filters to enable/disable")
+                .setPlaceholder("选择你要启用/移除的特效")
                 .setMaxValues(options.filter(o => o != "bassboost" && o != "speed").length)
                 .addOptions(options.filter(o => o != "bassboost" && o != "speed").map(option => {
                     return {
@@ -27,7 +27,7 @@ module.exports = {
                     }
                 }))
             const msg = await message.channel.send({
-                content: "🔗 Pick what filter(s) you want to change!", 
+                content: "选择你想更改的特效", 
                 components: [new MessageActionRow().addComponents(Menu)]
             }).catch(console.error)
             if(!msg) return;
@@ -43,7 +43,7 @@ module.exports = {
                     embeds: [
                         new MessageEmbed()
                         .setColor("#2f3136")
-                        .setTitle("Current Filters")
+                        .setTitle("当前特效")
                         .setDescription(Object.keys(queue.effects).filter(o => o != "bassboost" && o != "speed").map(option => `> **\`${option.charAt(0).toUpperCase()}${option.slice(1)}\`** - ${queue.effects[option] ? `✅ Enabled` : `❌ Disabled:`}`).join("\n\n"))
                     ]
                 })
@@ -62,7 +62,7 @@ module.exports = {
             })
         } catch(e) { 
             console.error(e);
-            message.reply({content: `<:oddno:968555009908293652> Something went wrong: \`\`\`${e.message || e}`.substring(0, 1950) + `\`\`\``}).catch(() => null);
+            message.reply({content: `<a:BobeeNo:1002230087762063410>｜似乎哪里出错了: \`\`\`${e.message || e}`.substring(0, 1950) + `\`\`\``}).catch(() => null);
         }
     },
 };
