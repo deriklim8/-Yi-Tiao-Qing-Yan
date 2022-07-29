@@ -1,6 +1,9 @@
 {
   "name": "oddmusic",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "description": "OddMusic is an simple but fastest discord music bot.",
   "main": "index.js",
   "scripts": {
