@@ -4,7 +4,8 @@ module.exports = {
     aliases: ["h"],
     description: "获取我的所有指令",
     run: async (client, message, args, prefix) => {
-        return message.reply({embeds: [new MessageEmbed()
+        return message.reply({embeds: [
+            new MessageEmbed()
             .setColor("RANDOM")
             .setTitle(`一条晴彦`)
             .setDescription(`小提示: 想要知道我的指令的其他用法？使用\`.a\`或\`.aliases\`指令！\n顺便说一下，我忙着和魈宝贴贴<:nekocatdroll:901445671637356637>`)
