@@ -4,15 +4,12 @@
   "engines": {
     "node": "16.x"
   },
-  "description": "OddMusic is an simple but fastest discord music bot.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "homepage": "https://github.com/odd-coder/OddMusic#readme",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
     "@discordjs/voice": "^0.8.0",
@@ -26,12 +23,5 @@
   },
   "devDependencies": {
     "node": "^16.15.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/deriklim8/Yi-Tiao-Qing-Yan.git"
-  },
-  "bugs": {
-    "url": "https://github.com/deriklim8/Yi-Tiao-Qing-Yan/issues"
   }
 }
